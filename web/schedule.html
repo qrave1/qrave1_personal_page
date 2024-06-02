@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Расписание</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fff;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #calendar {
+            margin: 20px 0;
+        }
+
+        .calendar {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+            margin: auto;
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .calendar-body {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .day {
+            flex: 1 0 14%;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        .zachet {
+            background-color: #4CAF50;
+        }
+
+        .exam {
+            background-color: #5b69ff;
+        }
+
+        .day.event {
+            color: white;
+        }
+
+        .day.blank {
+            background-color: #f4f4f4;
+            cursor: default;
+        }
+    </style>
+</head>
+<body>
+<div class="center">
+    <h1>Расписание экзаменов</h1>
+</div>
+<table>
+    <thead>
+    <tr>
+        <th>Дата</th>
+        <th>День недели</th>
+        <th>Время проведения</th>
+        <th>Предмет</th>
+        <th>Аудитория</th>
+        <th>Преподаватель</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>06 июня</td>
+        <td>Четверг</td>
+        <td>14:20 - 15:50</td>
+        <td>Зачет: Системное администрирование</td>
+        <td>И-205-б (В-78)</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>07 июня</td>
+        <td>Пятница</td>
+        <td>12:40 - 14:10</td>
+        <td>Зачет: Исследование операций</td>
+        <td>А-177 (В-78)</td>
+        <td>Новикова Ольга Александровна</td>
+    </tr>
+    <tr>
+        <td>07 июня</td>
+        <td>Пятница</td>
+        <td>18:00 - 19:30</td>
+        <td>Зачет: Основы антикоррупционной деятельности</td>
+        <td>Дистанционно</td>
+        <td>Родюкова Татьяна Николаевна</td>
+    </tr>
+    <tr>
+        <td>08 июня</td>
+        <td>Суббота</td>
+        <td>09:00 - 10:30</td>
+        <td>Зачет: Разработка клиент-серверных приложений</td>
+        <td>И-204-а (В-78)</td>
+        <td>Коваленко Михаил Андреевич</td>
+    </tr>
+    <tr>
+        <td>08 июня</td>
+        <td>Суббота</td>
+        <td>10:40 - 12:10</td>
+        <td>Курсовая работа: Разработка клиент-серверных приложений</td>
+        <td>И-204-а (В-78)</td>
+        <td>Беляев Павел Вячеславович, Коваленко Михаил Андреевич</td>
+    </tr>
+    <tr>
+        <td>10 июня</td>
+        <td>Понедельник</td>
+        <td>12:40 - 14:10</td>
+        <td>Зачет: Основы сетевых технологий</td>
+        <td>Б-211 (В-78)</td>
+        <td>Пыхтина Ирина Юрьевна</td>
+    </tr>
+    <tr>
+        <td>17 июня</td>
+        <td>Понедельник</td>
+        <td>12:40 - 14:10</td>
+        <td>Экзамен: Моделирование сред и разработка приложений виртуальной и дополненной реальности</td>
+        <td>И-205-б (В-78)</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>21 июня</td>
+        <td>Пятница</td>
+        <td>10:40 - 12:10</td>
+        <td>Экзамен: Системная и программная инженерия</td>
+        <td>ИВЦ-109 (В-78)</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>25 июня</td>
+        <td>Вторник</td>
+        <td>12:40 - 14:10</td>
+        <td>Экзамен: Проектирование информационных систем</td>
+        <td>И-204-в (В-78)</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>02 июля</td>
+        <td>Вторник</td>
+        <td>09:00 - 10:30</td>
+        <td>Экзамен: Технологии обработки транзакций клиент-серверных приложений</td>
+        <td>Г-226-1 (В-78)</td>
+        <td>Рачков Андрей Владимирович</td>
+    </tr>
+    </tbody>
+</table>
+
+<div id="calendar"></div>
+
+<div>И ещё транзакции 2 июля :)</div>
+
+<script>
+    const events = [
+        {date: '2024-06-06', title: 'Зачет: Системное администрирование', type: 'zachet'},
+        {date: '2024-06-07', title: 'Зачет: Исследование операций', type: 'zachet'},
+        {date: '2024-06-07', title: 'Зачет: Основы антикоррупционной деятельности', type: 'zachet'},
+        {date: '2024-06-08', title: 'Зачет: Разработка клиент-серверных приложений', type: 'zachet'},
+        {date: '2024-06-08', title: 'Курсовая работа: Разработка клиент-серверных приложений', type: 'zachet'},
+        {date: '2024-06-10', title: 'Зачет: Основы сетевых технологий', type: 'zachet'},
+        {
+            date: '2024-06-17',
+            title: 'Экзамен: Моделирование сред и разработка приложений виртуальной и дополненной реальности',
+            type: 'exam'
+        },
+        {date: '2024-06-21', title: 'Экзамен: Системная и программная инженерия', type: 'exam'},
+        {date: '2024-06-25', title: 'Экзамен: Проектирование информационных систем', type: 'exam'},
+        {
+            date: '2024-07-02',
+            title: 'Экзамен: Технологии обработки транзакций клиент-серверных приложений',
+            type: 'exam'
+        },
+    ];
+
+
+    function createCalendar(year, month) {
+        const calendar = document.getElementById('calendar');
+        calendar.innerHTML = '';
+
+        const calendarHeader = document.createElement('div');
+        calendarHeader.className = 'calendar-header';
+
+        const monthNames = [
+            'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+            'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'
+        ];
+
+        const monthYear = document.createElement('span');
+        monthYear.innerText = `${monthNames[month]} ${year}`;
+        calendarHeader.appendChild(monthYear);
+        calendar.appendChild(calendarHeader);
+
+        const calendarBody = document.createElement('div');
+        calendarBody.className = 'calendar-body';
+
+
+        const daysOfWeek = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+        daysOfWeek.forEach(day => {
+            const dayElement = document.createElement('div');
+            dayElement.className = 'day';
+            dayElement.innerText = day;
+            calendarBody.appendChild(dayElement);
+        });
+
+
+        const firstDay = new Date(year, month, 1).getDay();
+        const lastDate = new Date(year, month + 1, 0).getDate();
+        const prevMonthDays = firstDay === 0 ? 6 : firstDay - 1;
+
+
+        for (let i = 0; i < prevMonthDays; i++) {
+            const blankDay = document.createElement('div');
+            blankDay.className = 'day blank';
+            calendarBody.appendChild(blankDay);
+        }
+
+
+        for (let date = 1; date <= lastDate; date++) {
+            const dayElement = document.createElement('div');
+            dayElement.className = 'day';
+            dayElement.innerText = date;
+
+            const fullDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
+            if (events.some(event => event.date === fullDate)) {
+                dayElement.classList.add('event');
+                const e = events.find(event => event.date === fullDate)
+                dayElement.title = e.title;
+                switch (e.type) {
+                    case "zachet":
+                        dayElement.classList.add('zachet');
+                        break
+                    case "exam": {
+                        dayElement.classList.add('exam');
+                        break
+                    }
+                }
+            }
+
+            calendarBody.appendChild(dayElement);
+        }
+
+        calendar.appendChild(calendarBody);
+    }
+
+    const now = new Date();
+    createCalendar(now.getFullYear(), now.getMonth());
+</script>
+</body>
+</html>
