@@ -12,6 +12,7 @@ func main() {
 	router := http.NewServeMux()
 
 	router.Handle("/", logger(http.HandlerFunc(staticHandler)))
+	router.Handle("/ost", logger(http.HandlerFunc(ostHandler)))
 
 	if err := http.ListenAndServe(":8080", router); err != nil {
 		log.Println("Failed to start server:", err)
@@ -34,6 +35,10 @@ func staticHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	http.ServeFile(w, r, filePath)
+}
+
+func ostHandler(w http.ResponseWriter, r *http.Request) {
+	http.ServeFile(w, r, filepath.Join("web", "/ost.docx"))
 }
 
 func logger(inner http.Handler) http.Handler {
