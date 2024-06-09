@@ -1,4 +1,4 @@
-FROM huecker.io/library/golang:1.22
+FROM golang:1.22
 
 WORKDIR /app
 
